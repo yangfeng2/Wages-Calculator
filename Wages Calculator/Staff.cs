@@ -99,5 +99,10 @@ namespace Wages_Calculator
             string details = ("Name: "+Name+", Gender: "+Gender+", Nationality: "+Nationality+", TFN Number: "+TfnNumber+", Wages Per Hour: "+Wages+", Position: "+Position+"");
             return details;
         }
+
+        public double totalWages()
+        {
+            return Math.Round(MonWages + TueWages + WedWages + ThuWages + FriWages + SatWages + SunWages,2);
+        }
     }
 }

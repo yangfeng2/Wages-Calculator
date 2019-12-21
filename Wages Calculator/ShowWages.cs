@@ -31,7 +31,8 @@ namespace Wages_Calculator
             foreach(Staff s in staffList)
             {
                 data.Add("\nName: " + s.Name + ", Wage Per Hour: $" + s.Wages + "\n\n");
-                data.Add("Monday: $" + Math.Round(s.MonWages,2) + "\nTuesday: $"+s.TueWages+"\nWednesday: $"+s.WedWages+"\nThursday: $"+s.ThuWages+"\nFriday: $"+s.FriWages+"\nSaturday: $"+s.SatWages+"\nSunday: $"+s.SunWages+"");
+                data.Add("Monday: $" + Math.Round(s.MonWages,2) + "\nTuesday: $"+ Math.Round(s.TueWages, 2) + "\nWednesday: $"+ Math.Round(s.WedWages, 2) + "\nThursday: $"+ Math.Round(s.ThuWages, 2) + "\nFriday: $"+ Math.Round(s.FriWages, 2) + "\nSaturday: $"+ Math.Round(s.SatWages, 2) + "\nSunday: $"+ Math.Round(s.SunWages, 2) + "");
+                data.Add("\nTotal Wages: $" + s.totalWages()+"");
             }
 
             foreach(string s1 in data)
