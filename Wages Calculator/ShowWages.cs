@@ -28,18 +28,25 @@ namespace Wages_Calculator
 
         public void showWages()
         {
+            double allStaffTotalWages = 0;
+
             foreach(Staff s in staffList)
             {
                 data.Add("\nName: " + s.Name + ", Wage Per Hour: $" + s.Wages + "\n\n");
                 data.Add("Monday: $" + Math.Round(s.MonWages,2) + "\nTuesday: $"+ Math.Round(s.TueWages, 2) + "\nWednesday: $"+ Math.Round(s.WedWages, 2) + "\nThursday: $"+ Math.Round(s.ThuWages, 2) + "\nFriday: $"+ Math.Round(s.FriWages, 2) + "\nSaturday: $"+ Math.Round(s.SatWages, 2) + "\nSunday: $"+ Math.Round(s.SunWages, 2) + "");
-                data.Add("\nTotal Wages: $" + s.totalWages()+"");
+                data.Add("\n\nTotal Wages: $" + s.totalWages()+"\n\n");
+                allStaffTotalWages += s.totalWages();
             }
+
+            data.Add("\n\n\nAll Total Wages: $"+ Convert.ToString(Math.Round(allStaffTotalWages, 2)) + "");
 
             foreach(string s1 in data)
             {
                 richTextBox1.AppendText(s1);
                 Console.WriteLine();
             }
+
+            
         }
     }
 }

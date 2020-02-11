@@ -32,9 +32,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addWaiterStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculateWageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monday = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Tuesday = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Wednesday = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -42,8 +45,6 @@
             this.Friday = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Saturday = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.calculateWageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -59,7 +60,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1726, 49);
+            this.menuStrip1.Size = new System.Drawing.Size(1726, 52);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,10 +68,11 @@
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addWaiterStaffToolStripMenuItem,
+            this.saveStaffToolStripMenuItem,
             this.loadStaffToolStripMenuItem,
             this.calculateWageToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(136, 45);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(136, 48);
             this.addToolStripMenuItem.Text = "Setting";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItem_Click);
             // 
@@ -81,6 +83,13 @@
             this.addWaiterStaffToolStripMenuItem.Text = "Add Staff";
             this.addWaiterStaffToolStripMenuItem.Click += new System.EventHandler(this.addWaiterStaffToolStripMenuItem_Click);
             // 
+            // saveStaffToolStripMenuItem
+            // 
+            this.saveStaffToolStripMenuItem.Name = "saveStaffToolStripMenuItem";
+            this.saveStaffToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.saveStaffToolStripMenuItem.Text = "Delete Staff";
+            this.saveStaffToolStripMenuItem.Click += new System.EventHandler(this.saveStaffToolStripMenuItem_Click);
+            // 
             // loadStaffToolStripMenuItem
             // 
             this.loadStaffToolStripMenuItem.Name = "loadStaffToolStripMenuItem";
@@ -88,10 +97,17 @@
             this.loadStaffToolStripMenuItem.Text = "Load Staff";
             this.loadStaffToolStripMenuItem.Click += new System.EventHandler(this.loadStaffToolStripMenuItem_Click);
             // 
+            // calculateWageToolStripMenuItem
+            // 
+            this.calculateWageToolStripMenuItem.Name = "calculateWageToolStripMenuItem";
+            this.calculateWageToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.calculateWageToolStripMenuItem.Text = "Calculate Wage";
+            this.calculateWageToolStripMenuItem.Click += new System.EventHandler(this.calculateWageToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(104, 45);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(104, 48);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // dataGridView
@@ -111,14 +127,23 @@
             this.Sunday});
             this.dataGridView.DataSource = this.staffBindingSource;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 49);
+            this.dataGridView.Location = new System.Drawing.Point(0, 52);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 102;
             this.dataGridView.RowTemplate.Height = 40;
-            this.dataGridView.Size = new System.Drawing.Size(1726, 866);
+            this.dataGridView.Size = new System.Drawing.Size(1726, 863);
             this.dataGridView.TabIndex = 1;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 12;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 150;
             // 
             // Monday
             // 
@@ -197,22 +222,6 @@
             this.Sunday.Text = "Add";
             this.Sunday.Width = 150;
             // 
-            // calculateWageToolStripMenuItem
-            // 
-            this.calculateWageToolStripMenuItem.Name = "calculateWageToolStripMenuItem";
-            this.calculateWageToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
-            this.calculateWageToolStripMenuItem.Text = "Calculate Wage";
-            this.calculateWageToolStripMenuItem.Click += new System.EventHandler(this.calculateWageToolStripMenuItem_Click);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 12;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
             // staffBindingSource
             // 
             this.staffBindingSource.DataSource = typeof(Wages_Calculator.Staff);
@@ -256,6 +265,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn Saturday;
         private System.Windows.Forms.DataGridViewButtonColumn Sunday;
         private System.Windows.Forms.ToolStripMenuItem calculateWageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveStaffToolStripMenuItem;
     }
 }
 

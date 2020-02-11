@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wages_Calculator
 {
+    [Serializable]
     public class Staff
     {
         public string Name { get; set; }
@@ -103,6 +104,11 @@ namespace Wages_Calculator
         public double totalWages()
         {
             return Math.Round(MonWages + TueWages + WedWages + ThuWages + FriWages + SatWages + SunWages,2);
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

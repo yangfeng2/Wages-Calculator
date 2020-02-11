@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace Wages_Calculator
@@ -52,6 +54,11 @@ namespace Wages_Calculator
 
         private void loadStaffToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            staffList = new JavaScriptSerializer().Deserialize<List<Staff>>(File.ReadAllText("staff_data.soko"));
+
+
+
             staffBindingSource.Clear();
             foreach (Staff s in staffList)
                 staffBindingSource.Add(s);
@@ -150,6 +157,13 @@ namespace Wages_Calculator
             ShowWages showWages = new ShowWages(ref staffList);
             showWages.Show();
             showWages.showWages();
+        }
+
+        private void saveStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteStaff deleteStaff = new DeleteStaff();
+            deleteStaff.Show();
+            staffBindingSource.Clear();
         }
     }
 }

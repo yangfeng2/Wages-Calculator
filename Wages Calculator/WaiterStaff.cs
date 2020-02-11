@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Web;
+using System.IO;
+using System.Web.Script.Serialization;
 
 namespace Wages_Calculator
 {
@@ -51,10 +54,13 @@ namespace Wages_Calculator
         {
             try
             {
+                staffList = new JavaScriptSerializer().Deserialize<List<Staff>>(File.ReadAllText("staff_data.soko"));
                 Staff staff = new Staff();
                 staff = new Staff(nameText.Text, genderText.Text, nationalityText.Text, Convert.ToInt32(tfnText.Text), Convert.ToInt32(wagesText.Text), positionBox.Text);
                 staffList.Add(staff);
+                File.WriteAllText("staff_data.soko", new JavaScriptSerializer().Serialize(staffList));
                 MessageBox.Show("Staff Added !!");
+                staffList = new JavaScriptSerializer().Deserialize<List<Staff>>(File.ReadAllText("staff_data.soko"));
                 this.Close();
             }
             catch (Exception)

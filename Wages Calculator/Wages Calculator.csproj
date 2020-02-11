@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,12 @@
     </Compile>
     <Compile Include="AddTime.Designer.cs">
       <DependentUpon>AddTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteStaff.Designer.cs">
+      <DependentUpon>DeleteStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -75,6 +82,9 @@
     </Compile>
     <EmbeddedResource Include="AddTime.resx">
       <DependentUpon>AddTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteStaff.resx">
+      <DependentUpon>DeleteStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
